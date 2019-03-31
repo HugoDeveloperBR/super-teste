@@ -13,7 +13,12 @@
 
         public string Cpf { get; private set; }
 
-        private bool Validar(string cpf)
+        public bool Validar()
+        {
+            return Validar(Cpf);
+        }
+
+        public bool Validar(string cpf)
         {
             if (cpf.Length > VALOR_MAX_CPF)
                 return false;

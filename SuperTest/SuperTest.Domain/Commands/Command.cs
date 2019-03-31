@@ -1,13 +1,15 @@
-﻿using SuperTest.Domain.Events;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace SuperTest.Domain.Commands
 {
-    public abstract class Command : Message
+    public abstract class Command 
     {
-        public Result ValidationResult { get; set; }
+        public Command()
+        {
+            Notifications = new List<string>();
+        }
+
         public abstract bool IsValid();
+        public List<string> Notifications { get; set; }
     }
 }

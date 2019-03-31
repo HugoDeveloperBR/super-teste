@@ -1,22 +1,49 @@
-﻿using System;
+﻿using Flunt.Notifications;
+using Flunt.Validations;
+using SuperTest.Domain.Commands.Usuarios;
+using SuperTest.Domain.ValueObject.Usuarios;
 
 namespace SuperTest.Domain.Validations.Usuarios
 {
-    public class CadastrarNovoUsuarioValidation : Validation
+    public sealed class CadastrarNovoUsuarioValidation : Notifiable, IValidatable
     {
-        private Result ValidarNome()
+        private readonly CadastrarNovoUsuarioCommand command;
+
+        public CadastrarNovoUsuarioValidation(CadastrarNovoUsuarioCommand command)
         {
-            return Result.Fail("");
+            this.command = command;
         }
 
-        private Result ValidarEmail()
+        public void Validate()
         {
-            return Result.Fail("");
+            ValidarCPF();
+            ValidarNome();
+            ValidarEmail();
+            ValidarSenha();
         }
 
-        public override Result IsValid()
+        private void ValidarCPF()
         {
-            return Result.Combine(ValidarNome(), ValidarEmail());
+            var cpf = new CPF(command.CPF);
+
+            if (!cpf.Validar())
+                AddNotification(nameof(command.CPF), "CPF inválido");
+        }
+
+        private void ValidarNome()
+        {
+            if (string.IsNullOrEmpty(command.Nome) || string.IsNullOrWhiteSpace(command.Nome))
+                AddNotification(nameof(command.Nome), "Nome não pode ser vazio");
+        }
+
+        private void ValidarEmail()
+        {
+
+        }
+
+        private void ValidarSenha()
+        {
+
         }
     }
 }

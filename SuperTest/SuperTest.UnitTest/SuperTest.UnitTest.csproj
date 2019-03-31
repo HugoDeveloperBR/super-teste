@@ -12,4 +12,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SuperTest.ApplicationService\SuperTest.ApplicationService.csproj" />
+    <ProjectReference Include="..\SuperTest.Domain\SuperTest.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

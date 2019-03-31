@@ -1,29 +1,32 @@
-﻿using SuperTest.Domain.Entities.Usuarios;
-using SuperTest.Domain.Validations.Usuarios;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SuperTest.Domain.Validations.Usuarios;
 
 namespace SuperTest.Domain.Commands.Usuarios
 {
-    public class CadastrarNovoUsuarioCommand : Command
+    public sealed class CadastrarNovoUsuarioCommand : Command
     {
-        public CadastrarNovoUsuarioCommand(string nome, string email, string cpf)
+        public CadastrarNovoUsuarioCommand(string nome, string email, string cpf, string senha)
         {
             Nome = nome;
             Email = email;
             CPF = cpf;
+            Senha = senha;
         }
 
-        public string Nome{ get; private set; }
+        public string Nome { get; private set; }
         public string Email { get; private set; }
         public string CPF { get; private set; }
+        public string Senha { get; private set; }
+
 
         public override bool IsValid()
         {
-            var validationResult = new CadastrarNovoUsuarioValidation().IsValid();
+            var command = new CadastrarNovoUsuarioValidation(this);
+            command.Validate();
 
-            return ValidationResult.IsSuccess;
+            foreach (var notification in command.Notifications)
+                Notifications.Add(notification.Message);            
+
+            return command.Valid;
         }
     }
 }

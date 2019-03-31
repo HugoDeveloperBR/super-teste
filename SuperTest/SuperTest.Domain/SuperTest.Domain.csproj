@@ -6,11 +6,11 @@
 
   <ItemGroup>
     <Folder Include="Commands\QA\" />
-    <Folder Include="Services\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Flunt" Version="1.0.2" />
     <PackageReference Include="MediatR" Version="6.0.0" />
   </ItemGroup>
 

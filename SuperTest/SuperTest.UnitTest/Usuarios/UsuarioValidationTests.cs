@@ -1,4 +1,6 @@
-﻿using SuperTest.Domain.Commands.Usuarios;
+﻿using Shouldly;
+using Shouldly.ShouldlyExtensionMethods;
+using SuperTest.Domain.Commands.Usuarios;
 using SuperTest.Domain.Helpers;
 using SuperTest.Domain.Validations.Usuarios;
 using System.Linq;
@@ -6,8 +8,10 @@ using Xunit;
 
 namespace SuperTest.UnitTest.Usuarios
 {
-    public class UsuarioTests
+    public class UsuarioValidationTests
     {
+        //AAA - Arrange - Act - Assert
+
         [Trait("Validation", "Cadastrar Novo Usuário")]
         [Theory(DisplayName = "Usuário não pode ter nome vazio")]
         [InlineData("", "email@provider.com", "95876974056", "abcd1234")]
@@ -53,10 +57,10 @@ namespace SuperTest.UnitTest.Usuarios
 
             Assert.True(validation.Invalid);
             Assert.Equal(Resource.EMAIL_INVALID, validation.Notifications.FirstOrDefault().Message);
-        }       
+        }
 
         [Trait("Validation", "Cadastrar Novo Usuário")]
-        [Theory(DisplayName ="Usuário não pode ter menos que 6 caractes e nem espaços em branco")]
+        [Theory(DisplayName = "Usuário não pode ter menos que 6 caractes e nem espaços em branco")]
         [InlineData("Jackie Chan", "email@provider.com", "84364164062", null)]
         [InlineData("Peter Parker", "email@provider.com", "84364164062", "      ")]
         [InlineData("Arnold Schwarzenegger", "email@provider.com", "60779344022", "abcd1")]

@@ -1,7 +1,5 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SuperTest.ApplicationService;
-using SuperTest.Domain.Commands.Usuarios;
 using SuperTest.Domain.Services;
 using SuperTest.Web.Models;
 

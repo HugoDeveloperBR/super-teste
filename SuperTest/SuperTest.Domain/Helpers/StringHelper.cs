@@ -48,5 +48,15 @@ namespace SuperTest.Domain.Helpers
 
             return match.Success;
         }
+
+        public static bool TextoTemMinCaracteres(string texto, int min)
+        {
+            string expressao = @"^\S{" + min + @" ,}$\S";
+            Regex regex = new Regex(expressao);
+            Match match = regex.Match(texto);
+
+            return match.Success;
+
+        }
     }
 }

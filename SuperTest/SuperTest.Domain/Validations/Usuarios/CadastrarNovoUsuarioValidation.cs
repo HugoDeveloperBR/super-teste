@@ -27,29 +27,26 @@ namespace SuperTest.Domain.Validations.Usuarios
         {
             var cpf = new CPF(command.CPF);
 
-            if (!cpf.Validar())
-                AddNotification(nameof(command.CPF), "CPF inválido");
+            if (string.IsNullOrEmpty(command.CPF) || !cpf.Validar())
+                AddNotification(nameof(command.CPF), Resource.CPF_INVALID);
         }
 
         private void ValidarNome()
         {
             if (string.IsNullOrEmpty(command.Nome) || string.IsNullOrWhiteSpace(command.Nome))
-                AddNotification(nameof(command.Nome), "Nome não pode ser vazio");
+                AddNotification(nameof(command.Nome), Resource.NOME_REQUIRED);
         }
 
         private void ValidarEmail()
         {
-            if (!StringHelper.EmailEhValido(command.Email))
-                AddNotification(nameof(command.Email), "Email inválido");
+            if (string.IsNullOrEmpty(command.Email) || !StringHelper.EmailEhValido(command.Email))
+                AddNotification(nameof(command.Email), Resource.EMAIL_INVALID);
         }
 
         private void ValidarSenha()
         {
-            if (string.IsNullOrEmpty(command.Senha) || string.IsNullOrWhiteSpace(command.Senha))
-                AddNotification(nameof(command.Senha), "Senha não pode ser vazia");
-
-            if (command.Senha.Length < 6)
-                AddNotification(nameof(command.Senha), "Senha deve ter no minimo 6 caracteres");
+            if (string.IsNullOrEmpty(command.Senha) || !StringHelper.TextoTemMinCaracteres(command.Senha, 6))
+                AddNotification(nameof(command.Senha), string.Format(Resource.SENHA_MIN_CHARACTERS, "6"));
         }
     }
 }

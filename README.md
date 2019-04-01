@@ -6,6 +6,6 @@ frameworks que auxiliam na qualidade e confiabilidade de um software.
 # Tecnologias utilizadas:
 
 - ASP.NET Core 2.2 (with .NET Core 2.2)
-- Autofac
+- Entity Framework Core
 - XUnit
 - Flunt

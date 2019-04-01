@@ -15,8 +15,6 @@ namespace SuperTest.ApplicationService
             }                
 
             Usuario usuario = new Usuario(command.Nome, command.CPF, command.Email, command.Senha);
-
-
         }
     }
 }

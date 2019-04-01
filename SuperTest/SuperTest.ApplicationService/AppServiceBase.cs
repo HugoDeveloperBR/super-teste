@@ -1,11 +1,16 @@
-﻿using System;
+﻿using Microsoft.Win32.SafeHandles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace SuperTest.ApplicationService
 {
     public abstract class AppServiceBase : IDisposable
     {
+        bool disposed = false;
+        SafeHandle handle = new SafeFileHandle(IntPtr.Zero, true);
+
         public AppServiceBase()
         {
             Notifications = new List<string>();
@@ -23,7 +28,19 @@ namespace SuperTest.ApplicationService
 
         public void Dispose()
         {
-            
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        public void Dispose(bool disposing)
+        {
+            if (disposed)
+                return;
+
+            if (disposing)
+                handle.Dispose();
+
+            disposed = true;
         }
     }
 }

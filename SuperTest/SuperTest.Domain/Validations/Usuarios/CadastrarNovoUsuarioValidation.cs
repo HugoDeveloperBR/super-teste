@@ -45,7 +45,11 @@ namespace SuperTest.Domain.Validations.Usuarios
 
         private void ValidarSenha()
         {
+            if (string.IsNullOrEmpty(command.Senha) || string.IsNullOrWhiteSpace(command.Senha))
+                AddNotification(nameof(command.Senha), "Senha não pode ser vazia");
 
+            if (command.Senha.Length < 6)
+                AddNotification(nameof(command.Senha), "Senha deve ter no minimo 6 caracteres");
         }
     }
 }

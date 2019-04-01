@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace SuperTest.Domain.Helpers
 {
@@ -38,6 +39,14 @@ namespace SuperTest.Domain.Helpers
 
                 return ms.ToArray();
             }
+        }
+
+        public static bool EmailEhValido(string texto)
+        {
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(texto);
+
+            return match.Success;
         }
     }
 }

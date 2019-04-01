@@ -2,20 +2,22 @@
 using Microsoft.AspNetCore.Mvc;
 using SuperTest.ApplicationService;
 using SuperTest.Domain.Commands.Usuarios;
+using SuperTest.Domain.Services;
 using SuperTest.Web.Models;
 
 namespace SuperTest.Web.Controllers
 {
     public class HomeController : BaseController
     {
+        private readonly IUsuarioService _usuarioService;
+
+        public HomeController(IUsuarioService usuarioService)
+        {
+            _usuarioService = usuarioService;
+        }
+
         public IActionResult Index()
         {
-            UsuarioAppService usuarioAppService = new UsuarioAppService();
-            usuarioAppService.CadastrarUsuario(new CadastrarNovoUsuarioCommand("", "", "40225701804", "123"));
-
-            if(usuarioAppService.HasNotification)
-                return View();
-
             return View();
         }
 

@@ -1,6 +1,7 @@
 ﻿using Flunt.Notifications;
 using Flunt.Validations;
 using SuperTest.Domain.Commands.Usuarios;
+using SuperTest.Domain.Helpers;
 using SuperTest.Domain.ValueObject.Usuarios;
 
 namespace SuperTest.Domain.Validations.Usuarios
@@ -38,7 +39,8 @@ namespace SuperTest.Domain.Validations.Usuarios
 
         private void ValidarEmail()
         {
-
+            if (!StringHelper.EmailEhValido(command.Email))
+                AddNotification(nameof(command.Email), "Email inválido");
         }
 
         private void ValidarSenha()

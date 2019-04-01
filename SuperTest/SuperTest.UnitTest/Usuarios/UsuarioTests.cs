@@ -36,5 +36,21 @@ namespace SuperTest.UnitTest.Usuarios
             Assert.True(validation.Invalid);
             Assert.Equal("CPF inválido", validation.Notifications.FirstOrDefault().Message);
         }
+
+        [Trait("Validation", "Cadastrar Novo Usuário")]
+        [Theory(DisplayName = "Usuário não pode ter Email inválido")]
+        [InlineData("Jackie Chan", "", "84364164062", "abcd1234")]
+        [InlineData("Peter Parker", "provider.com", "84364164062", "abcd1234")]
+        [InlineData("Arnold Schwarzenegger", "@provider.com", "60779344022", "abcd1234")]
+        public void Validation_CadastarNovoUsuario_UsuarioNaoPodeTerEmailInvalido(string name, string email, string cpf, string senha)
+        {
+            var command = new CadastrarNovoUsuarioCommand(name, email, cpf, senha);
+            var validation = new CadastrarNovoUsuarioValidation(command);
+
+            validation.Validate();
+
+            Assert.True(validation.Invalid);
+            Assert.Equal("Email inválido", validation.Notifications.FirstOrDefault().Message);
+        }
     }
 }

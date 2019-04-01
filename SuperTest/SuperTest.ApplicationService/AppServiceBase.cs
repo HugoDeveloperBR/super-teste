@@ -26,6 +26,11 @@ namespace SuperTest.ApplicationService
             }
         }
 
+        public void AddNotification(string notification)
+        {
+            Notifications.Add(notification);
+        }
+
         public void Dispose()
         {
             Dispose(true);

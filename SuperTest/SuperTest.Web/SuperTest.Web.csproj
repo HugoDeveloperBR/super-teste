@@ -3,19 +3,21 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <UserSecretsId>54c0bf7b-20d3-4d9a-9716-2bd50b6af138</UserSecretsId>
   </PropertyGroup>
 
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.3" />
   </ItemGroup>
 
 
   <ItemGroup>
     <ProjectReference Include="..\SuperTest.ApplicationService\SuperTest.ApplicationService.csproj" />
     <ProjectReference Include="..\SuperTest.Infra.CrossCutting\SuperTest.Infra.CrossCutting.csproj" />
+    <ProjectReference Include="..\SuperTest.Infra.Repository\SuperTest.Infra.Repository.csproj" />
   </ItemGroup>
 
 </Project>

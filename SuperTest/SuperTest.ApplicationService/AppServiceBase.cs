@@ -16,6 +16,8 @@ namespace SuperTest.ApplicationService
             Notifications = new List<string>();
         }
 
+        #region Notification
+
         public List<string> Notifications { get; set; }
 
         public bool HasNotification
@@ -35,6 +37,8 @@ namespace SuperTest.ApplicationService
         {
             Notifications.Add(notification);
         }
+
+        #endregion
 
         public void Dispose()
         {

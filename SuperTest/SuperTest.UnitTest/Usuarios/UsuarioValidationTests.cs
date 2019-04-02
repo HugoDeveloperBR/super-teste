@@ -1,5 +1,4 @@
 ﻿using Shouldly;
-using Shouldly.ShouldlyExtensionMethods;
 using SuperTest.Domain.Commands.Usuarios;
 using SuperTest.Domain.Helpers;
 using SuperTest.Domain.Validations.Usuarios;
@@ -23,7 +22,7 @@ namespace SuperTest.UnitTest.Usuarios
 
             validation.Validate();
 
-            Assert.True(validation.Invalid);
+            validation.Invalid.ShouldBeTrue();
             Assert.Equal(Resource.NOME_REQUIRED, validation.Notifications.FirstOrDefault().Message);
         }
 
@@ -39,8 +38,8 @@ namespace SuperTest.UnitTest.Usuarios
 
             validation.Validate();
 
-            Assert.True(validation.Invalid);
-            Assert.Equal(Resource.CPF_INVALID, validation.Notifications.FirstOrDefault().Message);
+            validation.Invalid.ShouldBeTrue();
+            validation.Notifications.FirstOrDefault().Message.ShouldBe(Resource.CPF_INVALID);
         }
 
         [Trait("Validation", "Cadastrar Novo Usuário")]
@@ -55,8 +54,8 @@ namespace SuperTest.UnitTest.Usuarios
 
             validation.Validate();
 
-            Assert.True(validation.Invalid);
-            Assert.Equal(Resource.EMAIL_INVALID, validation.Notifications.FirstOrDefault().Message);
+            validation.Invalid.ShouldBeTrue();
+            validation.Notifications.FirstOrDefault().Message.ShouldBe(Resource.EMAIL_INVALID);
         }
 
         [Trait("Validation", "Cadastrar Novo Usuário")]
@@ -71,8 +70,8 @@ namespace SuperTest.UnitTest.Usuarios
 
             validation.Validate();
 
-            Assert.True(validation.Invalid);
-            Assert.Equal(string.Format(Resource.SENHA_MIN_CHARACTERS, 6), validation.Notifications.FirstOrDefault().Message);
+            validation.Invalid.ShouldBeTrue();
+            validation.Notifications.FirstOrDefault().Message.ShouldBe(string.Format(Resource.SENHA_MIN_CHARACTERS, 6));
         }
 
     }

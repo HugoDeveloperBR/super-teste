@@ -22,6 +22,8 @@ namespace SuperTest.ApplicationService
                 return false; ;
             }
 
+            //TODO: Obter usuario e realizar validações
+
             return true;
         }
 

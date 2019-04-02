@@ -49,14 +49,15 @@ namespace SuperTest.Domain.Helpers
             return match.Success;
         }
 
-        public static bool TextoTemMinCaracteres(string texto, int min)
+        public static bool TextoTemMinCaracteres(string texto, int min, bool ignorarEspacoEmBranco = true)
         {
-            string expressao = @"^\S{" + min + @" ,}$\S";
-            Regex regex = new Regex(expressao);
-            Match match = regex.Match(texto);
+            if (texto == null)
+                return false;
 
-            return match.Success;
+            if(!ignorarEspacoEmBranco)
+                texto = texto.Trim();
 
+            return texto.Length >= min;
         }
     }
 }

@@ -45,7 +45,7 @@ namespace SuperTest.Domain.Validations.Usuarios
 
         private void ValidarSenha()
         {
-            if (string.IsNullOrEmpty(command.Senha) || !StringHelper.TextoTemMinCaracteres(command.Senha, 6))
+            if (string.IsNullOrEmpty(command.Senha) || !StringHelper.TextoTemMinCaracteres(command.Senha, 6, false))
                 AddNotification(nameof(command.Senha), string.Format(Resource.SENHA_MIN_CHARACTERS, "6"));
         }
     }

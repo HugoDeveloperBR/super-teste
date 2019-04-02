@@ -2,7 +2,8 @@
 <p align="center">
   <img src="https://github.com/HugoDeveloperBR/super-test/raw/master/SuperTest/SuperTest.Web/wwwroot/images/logo.png">  
 </p>
-___
+
+***
 
 ## O que é o Super Teste?
 

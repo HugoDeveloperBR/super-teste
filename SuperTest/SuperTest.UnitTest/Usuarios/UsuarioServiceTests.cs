@@ -11,7 +11,7 @@ namespace SuperTest.UnitTest.Usuarios
 {
     public class UsuarioServiceTests
     {
-        [Trait("Service", "CadastrarUsuario")]
+        [Trait("Service", "Cadastrar Usuário")]
         [Fact(DisplayName ="Cada email de usuário deve ser único")]        
         public void UsuarioService_CadatrarUsuario_CadaEmailDeUsuarioDeveSerUnico()
         {
@@ -23,7 +23,7 @@ namespace SuperTest.UnitTest.Usuarios
             var service = new UsuarioAppService(repo.Object);
             service.CadastrarUsuario(new CadastrarNovoUsuarioCommand("Hugo", "email@provider.com", "40225701804", "123abc"));
 
-            repo.Verify(r => r.ObterUsuarioPorEmail("email@provider.com"), Times.Once);
+            repo.Verify(r => r.AdicionarUsuario(usuarioMock), Times.Never);
             service.HasNotification.ShouldBeTrue();
             service.Notifications.FirstOrDefault().ShouldBe("Email já cadastrado");
         }

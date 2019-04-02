@@ -15,5 +15,7 @@ frameworks que auxiliam na qualidade e confiabilidade de um software.
 - ASP.NET Core 2.2 (with .NET Core 2.2)
 - Entity Framework Core
 - XUnit
+- Moq
+- Shouldly
 - Flunt
 - Bootstrap 4

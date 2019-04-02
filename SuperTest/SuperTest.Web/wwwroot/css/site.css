@@ -45,9 +45,8 @@ html {
 
 body {
     /* Margin bottom by footer height */
-    background-image: url('../images/background.svg');
+    /*background-image: url('../images/background.svg');*/
     margin-bottom: 60px;
-    background-color: #f1f1f1;
 }
 
 .footer {

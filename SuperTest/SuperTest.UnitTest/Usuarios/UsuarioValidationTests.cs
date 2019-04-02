@@ -60,7 +60,7 @@ namespace SuperTest.UnitTest.Usuarios
         }
 
         [Trait("Validation", "Cadastrar Novo Usuário")]
-        [Theory(DisplayName = "Usuário não pode ter menos que 6 caractes e nem espaços em branco")]
+        [Theory(DisplayName = "Usuário não pode ter senha menor que 6 caracteres e nem espaços em branco")]
         [InlineData("Jackie Chan", "email@provider.com", "84364164062", null)]
         [InlineData("Peter Parker", "email@provider.com", "84364164062", "      ")]
         [InlineData("Arnold Schwarzenegger", "email@provider.com", "60779344022", "abcd1")]

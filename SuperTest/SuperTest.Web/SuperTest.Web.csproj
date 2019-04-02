@@ -21,9 +21,4 @@
     <ProjectReference Include="..\SuperTest.Infra.Repository\SuperTest.Infra.Repository.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="wwwroot\images\" />
-  </ItemGroup>
-
 </Project>

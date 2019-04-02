@@ -45,7 +45,9 @@ html {
 
 body {
     /* Margin bottom by footer height */
+    background-image: url('../images/background.svg');
     margin-bottom: 60px;
+    background-color: #f1f1f1;
 }
 
 .footer {
@@ -76,13 +78,17 @@ body {
         top: 2px;
         padding: 9px 12px;
         color: #aaa;
-        transition:.3s;
+        transition: .3s;
     }
 
     .input-with-icon input[type=text]:focus + i {
-        color:black;
+        color: black;
     }
 
     .input-with-icon input[type=password]:focus + i {
         color: black;
     }
+
+#become {
+    font-family:'Comic Sans MS';
+}

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SuperTest.Domain.Services;
 using SuperTest.Web.Models;
+using SuperTest.Web.Models.Usuarios;
 
 namespace SuperTest.Web.Controllers
 {

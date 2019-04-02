@@ -14,6 +14,17 @@ namespace SuperTest.ApplicationService
             _usuarioRepository = usuarioRepository;
         }
 
+        public bool AutenticarUsuario(AutenticarUsuarioCommand command)
+        {
+            if(!command.IsValid())
+            {
+                base.Notifications = command.Notifications;
+                return false; ;
+            }
+
+            return true;
+        }
+
         public void CadastrarUsuario(CadastrarNovoUsuarioCommand command)
         {
             if (!command.IsValid())

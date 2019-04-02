@@ -26,6 +26,11 @@ namespace SuperTest.ApplicationService
             }
         }
 
+        public void Clear()
+        {
+            Notifications.Clear();
+        }
+
         public void AddNotification(string notification)
         {
             Notifications.Add(notification);

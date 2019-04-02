@@ -63,6 +63,10 @@ body {
     padding-left: 40px;
 }
 
+.input-with-icon input[type=email] {
+    padding-left: 40px;
+}
+
 .input-with-icon input[type=password] {
     padding-left: 40px;
 }
@@ -81,6 +85,10 @@ body {
     }
 
     .input-with-icon input[type=text]:focus + i {
+        color: black;
+    }
+
+    .input-with-icon input[type=email]:focus + i {
         color: black;
     }
 

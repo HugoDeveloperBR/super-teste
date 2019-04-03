@@ -16,6 +16,7 @@ frameworks que auxiliam na qualidade e confiabilidade de um software.
 - Entity Framework Core
 - XUnit
 - Moq
+- SpecFlow
 - Shouldly
 - Flunt
 - Bootstrap 4

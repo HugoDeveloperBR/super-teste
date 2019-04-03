@@ -1,0 +1,24 @@
+﻿@model LoginModel
+
+<form class="form-inline" asp-controller="Account" asp-action="Login" method="post">
+    <div class="form-group">
+        <div class="form-group">
+            <div class="input-with-icon">
+                <input asp-for="Email" class="form-control mr-2" placeholder="Email">
+                <i class="fas fa-envelope"></i>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group pt-4">
+            <div class="input-with-icon">
+                <input asp-for="Senha" class="form-control mr-2" placeholder="Senha">
+                <i class="fas fa-lock"></i>
+                <span asp-validation-for="Senha" class="text-danger"></span>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                    <a href="#" data-toggle="modal" data-target="#modalPassword">Esqueceu a senha?</a>
+                </small>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-dark"><span class="font-weight-light">ENTRAR</span></button>
+</form>

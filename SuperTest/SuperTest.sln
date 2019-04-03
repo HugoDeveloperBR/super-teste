@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperTest.Infra.CrossCuttin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperTest.Infra.Repository", "SuperTest.Infra.Repository\SuperTest.Infra.Repository.csproj", "{667CBED8-4D50-4CBF-9951-0B5E657FC3F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperTest.TestesAutomatizados", "SuperTest.TestesAutomatizados\SuperTest.TestesAutomatizados.csproj", "{97DB79F9-4927-4322-ABEB-75AF9F8B6C5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperTest.TestesAutomatizados", "SuperTest.TestesAutomatizados\SuperTest.TestesAutomatizados.csproj", "{97DB79F9-4927-4322-ABEB-75AF9F8B6C5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -43,8 +43,7 @@ namespace SuperTest.Web.Controllers
                 var command = new CadastrarNovoUsuarioCommand(model.Nome, model.Email, model.CPF, model.Senha);
                 _usuarioService.CadastrarUsuario(command);
 
-                bool ehValido = _usuarioService.HasNotification;
-                if(!ehValido)
+                if(_usuarioService.HasNotification)
                 {
                     foreach (var notification in _usuarioService.Notifications)
                     {
@@ -55,7 +54,6 @@ namespace SuperTest.Web.Controllers
                 }
             }
 
-            model.UsuarioCadastrado = true;
             return RedirectToAction("Index", "Home");
         }
     }

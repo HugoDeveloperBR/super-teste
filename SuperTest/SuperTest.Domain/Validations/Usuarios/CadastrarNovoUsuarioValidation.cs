@@ -39,7 +39,7 @@ namespace SuperTest.Domain.Validations.Usuarios
 
         private void ValidarEmail()
         {
-            if (string.IsNullOrEmpty(command.Email) || !StringHelper.EmailEhValido(command.Email))
+            if (!AssertConcern.EmailEhValido(command.Email))
                 AddNotification(nameof(command.Email), Resource.EMAIL_INVALID);
         }
 

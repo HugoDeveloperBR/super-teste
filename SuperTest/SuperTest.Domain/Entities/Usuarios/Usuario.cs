@@ -14,7 +14,7 @@ namespace SuperTest.Domain.Entities.Usuarios
             Email = email;
             CPF = new CPF(cpf);
             Conta = new Conta(senha);
-            CriadoEm = DateTime.UtcNow;
+            CriadoEm = DateTime.Now;
         }
 
         public string Nome { get; private set; }

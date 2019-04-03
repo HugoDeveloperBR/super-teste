@@ -8,7 +8,7 @@ namespace SuperTest.Domain.Entities.QA
         public Roteiro()
         {
             Objetivos = new List<Objetivo>();
-            CriadoEm = DateTime.UtcNow;
+            CriadoEm = DateTime.Now;
         }
 
         public ICollection<Objetivo> Objetivos { get; private set; }

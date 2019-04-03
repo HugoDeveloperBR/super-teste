@@ -11,8 +11,8 @@ namespace SuperTest.Domain.Entities.Usuarios
         {
             Id = Guid.NewGuid();
             Senha = StringHelper.CriptografarTexto(senha);
-            SenhaExpiraEm = DateTime.UtcNow.AddDays(15);
-            SenhaAtualizadaEm = DateTime.UtcNow;
+            SenhaExpiraEm = DateTime.Now.AddDays(15);
+            SenhaAtualizadaEm = DateTime.Now;
             StatusConta = StatusConta.Ativa;
         }
 

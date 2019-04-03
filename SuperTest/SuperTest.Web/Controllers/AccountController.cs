@@ -2,10 +2,6 @@
 using SuperTest.Domain.Commands.Usuarios;
 using SuperTest.Domain.Services;
 using SuperTest.Web.Models.Usuarios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SuperTest.Web.Controllers
 {
@@ -36,6 +32,30 @@ namespace SuperTest.Web.Controllers
                 }
             }
 
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarUsuario(CadastrarUsuarioModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var command = new CadastrarNovoUsuarioCommand(model.Nome, model.Email, model.CPF, model.Senha);
+                _usuarioService.CadastrarUsuario(command);
+
+                bool ehValido = _usuarioService.HasNotification;
+                if(!ehValido)
+                {
+                    foreach (var notification in _usuarioService.Notifications)
+                    {
+                        //TODO: Apresentar notificaçoes
+                    }
+
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            model.UsuarioCadastrado = true;
             return RedirectToAction("Index", "Home");
         }
     }

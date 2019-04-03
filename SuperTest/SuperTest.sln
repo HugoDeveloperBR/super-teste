@@ -15,13 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application Service", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{6BAD1B86-FB01-4C36-AF04-AD523A790B99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperTest.Web", "SuperTest.Web\SuperTest.Web.csproj", "{A649D996-E355-4D66-8F06-739078C1E6D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperTest.Web", "SuperTest.Web\SuperTest.Web.csproj", "{A649D996-E355-4D66-8F06-739078C1E6D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{3A2DA6FF-F147-4DD1-AA96-BBC930DE77AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperTest.Infra.CrossCutting", "SuperTest.Infra.CrossCutting\SuperTest.Infra.CrossCutting.csproj", "{D27FC5B7-F954-42B9-AD18-39B1110A37AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperTest.Infra.CrossCutting", "SuperTest.Infra.CrossCutting\SuperTest.Infra.CrossCutting.csproj", "{D27FC5B7-F954-42B9-AD18-39B1110A37AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperTest.Infra.Repository", "SuperTest.Infra.Repository\SuperTest.Infra.Repository.csproj", "{667CBED8-4D50-4CBF-9951-0B5E657FC3F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperTest.Infra.Repository", "SuperTest.Infra.Repository\SuperTest.Infra.Repository.csproj", "{667CBED8-4D50-4CBF-9951-0B5E657FC3F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperTest.TestesAutomatizados", "SuperTest.TestesAutomatizados\SuperTest.TestesAutomatizados.csproj", "{97DB79F9-4927-4322-ABEB-75AF9F8B6C5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{667CBED8-4D50-4CBF-9951-0B5E657FC3F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{667CBED8-4D50-4CBF-9951-0B5E657FC3F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{667CBED8-4D50-4CBF-9951-0B5E657FC3F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97DB79F9-4927-4322-ABEB-75AF9F8B6C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97DB79F9-4927-4322-ABEB-75AF9F8B6C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97DB79F9-4927-4322-ABEB-75AF9F8B6C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97DB79F9-4927-4322-ABEB-75AF9F8B6C5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

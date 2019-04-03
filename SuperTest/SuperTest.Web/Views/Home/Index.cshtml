@@ -2,6 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model CadastrarUsuarioModel
 
 <div class="row">
     <div class="col-md-7">
@@ -23,11 +24,11 @@
                 </div>
             </div>
             <div class="card-body">
-                <form>
+                <form asp-controller="Account" asp-action="CadastrarUsuario" method="post">
                     <div class="form-group">
                         <div class="col-md-12">
                             <div class="input-with-icon">
-                                <input type="text" class="form-control mb-2" placeholder="Nome">
+                                <input asp-for="Nome" class="form-control mb-2" placeholder="Nome">
                                 <i class="fas fa-file-signature"></i>
                             </div>
                         </div>
@@ -35,7 +36,7 @@
                     <div class="form-group">
                         <div class="col-md-12">
                             <div class="input-with-icon">
-                                <input type="text" class="form-control mb-2" placeholder="Email">
+                                <input asp-for="Email" class="form-control mb-2" placeholder="Email">
                                 <i class="fas fa-envelope"></i>
                             </div>
                         </div>
@@ -43,7 +44,7 @@
                     <div class="form-group">
                         <div class="col-md-12">
                             <div class="input-with-icon">
-                                <input type="text" class="form-control mb-2" placeholder="CPF">
+                                <input asp-for="CPF" class="form-control mb-2" placeholder="CPF">
                                 <i class="fas fa-id-card"></i>
                             </div>
                         </div>
@@ -51,7 +52,7 @@
                     <div class="form-group">
                         <div class="col-md-12">
                             <div class="input-with-icon">
-                                <input type="password" class="form-control mb-2" placeholder="Senha">
+                                <input asp-for="Senha" class="form-control mb-2" placeholder="Senha">
                                 <i class="fas fa-lock"></i>
                             </div>
                         </div>
